@@ -89,6 +89,42 @@ button {
   transform: translateX(-50%);
 }
 
+html {  
+  overflow: hidden;
+  height: 100%;
+  background: radial-gradient(hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 1)),
+    linear-gradient(90deg, dimgrey 1px, transparent 1px), 
+    linear-gradient(dimgrey 1px, grey 1px);
+  background-size: 100%, 2px 1px, 1px 2px;
+}
+.radar, .sweep { position: absolute; }
+.radar {
+  overflow: hidden; 
+  top: 1%; left: 50%;
+  margin: -117px;
+  width: 248px; height: 188px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5),
+    inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+  background: 
+    repeating-radial-gradient(transparent 0 23px, #287a33 24px 26px, #0000 27px), 
+    linear-gradient(transparent 49.75%, #0e4c42 0 50.25%, transparent 0) 50% no-repeat,
+    linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0) 50% no-repeat,
+    linear-gradient(#333, #111);
+  background-size: 100%, 218px 218px, 218px 218px, 100%;
+}
+.sweep {
+  box-sizing: border-box;
+  top: 16px; left: 16px;
+  border-right: solid 1px hsla(145, 50%, 40%, .3);
+  width: 108px; height: 108px;
+  border-radius: 100% 0 0 0;
+  transform-origin: 100% 100%;
+  background: linear-gradient(50deg, rgba(34, 34, 34, 0) 56%, hsla(145, 50%, 40%, 1));
+  animation: sweep 5s infinite linear;
+}
+@keyframes sweep { to { transform: rotate(360deg); } }
+
 .secure-badge {
   display: flex;
   align-items: center;
