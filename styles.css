@@ -64,7 +64,7 @@ button {
 }
 
 .brand-mark:hover {
-  transform: scale(1.08);
+  transform: rotate(360deg) scale(1.08);
   box-shadow: 0 0 1.3rem rgb(0 216 75 / 55%);
 }
 
